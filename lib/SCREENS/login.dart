@@ -25,6 +25,8 @@ class _loginState extends State<login> {
             padding: EdgeInsets.all(10),
             child: Column(
               children: [
+
+                Image(image: AssetImage("assets/images/user_avatar.jpg"), height: 200, width: 200,),
                 TextField(
                   controller: usernameController,
                   style: TextStyle(fontSize: 20),
@@ -65,15 +67,16 @@ class _loginState extends State<login> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      TextButton(
-                          onPressed: (){},
-                          child: Text(
-                            "Annulé",
-                            style:
-                            TextStyle(color: Colors.lightBlueAccent, fontWeight: FontWeight.bold) ,
-                          )),
+                      // TextButton(
+                      //     onPressed: (){},
+                      //     child: Text(
+                      //       "Annulé",
+                      //       style:
+                      //       TextStyle(color: Colors.lightBlueAccent, fontWeight: FontWeight.bold) ,
+                      //     )),
                       SizedBox(
                         height: 44,
+
                         child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             primary: Colors.lightBlueAccent,
