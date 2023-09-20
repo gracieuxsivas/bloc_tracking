@@ -36,15 +36,8 @@ class _ViewerState extends State<Viewer> {
     return Scaffold(
       extendBody: true,
       backgroundColor: Colors.blue,
-      // appBar: AppBar(
-      //   title: Text("Operations"),
-      //   elevation: 0,
-      //   centerTitle: true,
-      // ),
 
       bottomNavigationBar: CurvedNavigationBar(
-
-        // key: navigationKey,
           backgroundColor: Colors.transparent,
           height: 60,
           index: index,
@@ -65,7 +58,9 @@ class _ViewerState extends State<Viewer> {
     );
   }
   Widget getSelectedWidget({required int index}){
+
     Widget widget;
+
     switch(index){
       case 0:
         widget = const Accueil();
@@ -81,7 +76,7 @@ class _ViewerState extends State<Viewer> {
         widget = Livreurs();
         break;
       default:
-        widget = const Livraisons();
+        widget = const Accueil();
         break;
     }
 

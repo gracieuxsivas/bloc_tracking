@@ -9,54 +9,61 @@ import 'package:flutter/foundation.dart';
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
-class operation extends StatefulWidget {
-  const operation({super.key});
+class Navigateur extends StatefulWidget {
+  const Navigateur({super.key});
 
   @override
-  State<operation> createState() => _operationState();
+  State<Navigateur> createState() => _NavigateurState();
 }
 
-class _operationState extends State<operation> {
+class _NavigateurState extends State<Navigateur> {
   //final navigationKey=GlobalKey<CurvedNavigationBarState>();
-  int index =2;
-  final screens = [
-    Accueil(),
-    Track(),
-    //Add_Livreur_Dialog(),
+  int index =0;
 
-  ];
+
   @override
   Widget build(BuildContext context) {
 
     final items=<Widget>[
       Icon(Icons.home, size: 30,),
       Icon(Icons.person, size: 30,),
-      Icon(Icons.favorite, size: 30,),
+      Icon(Icons.pin_drop_outlined, size: 30,),
       Icon(Icons.settings, size: 30,),
     ];
 
    // int index =2;
 
-    return Scaffold(
-      extendBody: true,
-      backgroundColor: Colors.blue,
+    return ClipRect(
+      child: Scaffold(
+        extendBody: true,
+        backgroundColor: Colors.blue,
 
-      body: Center(
-        child: getSelectedWidget(index:index)
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
+        body: Center(
+          child: getSelectedWidget(index:index)
+        ),
+        bottomNavigationBar:
+        //Theme pour changer la couleur de l'icole
+        Theme(data: Theme.of(context).copyWith(
+            iconTheme:IconThemeData(color: Colors.white) ),
 
-       // key: navigationKey,
-        backgroundColor: Colors.transparent,
-        height: 60,
-        index: index,
-        items: items,
-        animationDuration: const Duration(microseconds: 300),
-        onTap: (selectedIndex) {
-          setState(() {
-            index = selectedIndex;
-          });
-        }
+          child: CurvedNavigationBar(
+
+           // key: navigationKey,
+            backgroundColor: Colors.transparent,
+             color: Colors.blueAccent,
+            buttonBackgroundColor: Colors.blue,
+
+            height: 70,
+            index: index,
+            items: items,
+            animationDuration: const Duration(microseconds: 300),
+            onTap: (selectedIndex) {
+              setState(() {
+                index = selectedIndex;
+              });
+            }
+          ),
+        ),
       ),
     );
   }
@@ -66,7 +73,6 @@ class _operationState extends State<operation> {
       case 0:
         widget = const Accueil();
         break;
-
       case 1:
         widget = const Clients();
         break;
@@ -77,7 +83,7 @@ class _operationState extends State<operation> {
         widget = Livreurs();
         break;
       default:
-        widget = const Livraisons();
+        widget = const Accueil();
         break;
     }
 

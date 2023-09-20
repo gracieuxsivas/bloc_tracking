@@ -1,4 +1,6 @@
 import 'package:bloc_tracking/SCREENS/Accueil.dart';
+import 'package:bloc_tracking/SCREENS/operation/Navigat.dart';
+import 'package:bloc_tracking/services/viewer.dart';
 import 'package:flutter/material.dart';
 
 class login extends StatefulWidget {
@@ -39,7 +41,6 @@ class _loginState extends State<login> {
                     labelText: "Nom",
                     hintText: "Nom d'utilisateur"
                   ),
-
                   keyboardType: TextInputType.text,
                 ),
 
@@ -82,9 +83,10 @@ class _loginState extends State<login> {
                             primary: Colors.lightBlueAccent,
                           ),
                           onPressed: (){
+
                             Navigator.push(context,
                                 MaterialPageRoute(
-                                    builder: (context)=> Accueil()));
+                                    builder: (context)=> Navigateur()));
                           },
                           child: isLoading?CircularProgressIndicator(): Text(
                             "Connecté",

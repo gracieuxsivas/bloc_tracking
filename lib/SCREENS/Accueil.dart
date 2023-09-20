@@ -1,8 +1,11 @@
+//import 'dart:html';
+
 import 'package:bloc_tracking/SCREENS/COMMANDES/Commandes%20en%20cours.dart';
 import 'package:bloc_tracking/SCREENS/Livreurs/Livreurs.dart';
 import 'package:bloc_tracking/SCREENS/Map/Map.dart';
 import 'package:bloc_tracking/SCREENS/login.dart';
-import 'package:bloc_tracking/SCREENS/operation/operation.dart';
+import 'package:bloc_tracking/SCREENS/operation/Navigat.dart';
+import 'package:bloc_tracking/SCREENS/operation/Operation.dart';
 import 'package:bloc_tracking/widget/navBar.dart';
 import 'package:flutter/material.dart';
 import 'package:focused_menu/focused_menu.dart';
@@ -30,20 +33,7 @@ class _AccueilState extends State<Accueil> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
 
-        // key: navigationKey,
-          backgroundColor: Colors.transparent,
-          height: 60,
-          index: index,
-          items: items,
-          animationDuration: const Duration(microseconds: 300),
-          onTap: (selectedIndex) {
-            setState(() {
-              index = selectedIndex;
-            });
-          }
-      ),
       body: Stack(
         children: [
           SafeArea(
@@ -177,8 +167,6 @@ class _AccueilState extends State<Accueil> {
                           ],
                         ),
 
-
-
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -307,7 +295,7 @@ class _AccueilState extends State<Accueil> {
                               onTap: () {
                                 Navigator.push(context,
                                     MaterialPageRoute(
-                                        builder: (context) =>operation())
+                                        builder: (context) =>Opetation())
                                 );
                               },
                               highlightColor: Colors.black,
@@ -491,10 +479,25 @@ class _AccueilState extends State<Accueil> {
           //NOTRE BARRE DE NAVIGATION
 
 
-          // Positioned(bottom:0, left: 0,
-          //     child: navBar()),
+
         ],
-      ),);
+      ),
+
+      bottomNavigationBar: CurvedNavigationBar(
+
+        // key: navigationKey,
+          backgroundColor: Colors.transparent,
+          height: 70,
+          index: index,
+          items: items,
+          animationDuration: const Duration(microseconds: 300),
+          onTap: (selectedIndex) {
+            setState(() {
+              index = selectedIndex;
+            });
+          }
+      ),
+    );
 
   }
 
@@ -533,4 +536,6 @@ class _AccueilState extends State<Accueil> {
       ],
     ),
   );
+
+
 }
