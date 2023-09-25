@@ -1,3 +1,4 @@
+import 'package:bloc_tracking/SCREENS/COMMANDES/ChangeAdress.dart';
 import 'package:bloc_tracking/helper.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +69,15 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                       ),
                     ),
                     TextButton(
-                        onPressed: (){},
+                        onPressed: (){
+
+                          Navigator.push(context,
+                              MaterialPageRoute(
+                                  builder: (context) =>ChangeAdress())
+                          );
+
+
+                        },
                         child: Text("Modifier", style: TextStyle(fontWeight: FontWeight.bold),))
                   ],
                   ),

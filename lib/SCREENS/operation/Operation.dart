@@ -1,3 +1,4 @@
+import 'package:bloc_tracking/SCREENS/COMMANDES/Commandes%20en%20cours.dart';
 import 'package:bloc_tracking/SCREENS/operation/payement.dart';
 import 'package:bloc_tracking/helper.dart';
 import 'package:flutter/material.dart';
@@ -117,142 +118,167 @@ class _OpetationState extends State<Opetation> {
 
 
                   //----------------
-                      Container(
-                        height: 70,
-                        width: double.infinity,
-                        child: Stack(
-                          children: [
-                            Container(
-                              height: double.infinity,
-                              width: double.infinity,
-                              margin: EdgeInsets.only(
-                                  right: 20),
-                              padding: EdgeInsets.symmetric(horizontal: 20),
-                              decoration: ShapeDecoration(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5)
-                                ),
-                                color: Colors.grey[400],
-                              ),
+                      GestureDetector(
 
-                              child: Row(children: [
-                                // CircleAvatar(
-                                //   backgroundColor: Colors.grey,
-                                //   backgroundImage: AssetImage(
-                                //       "assets/images/menu.png"),
-                                //   radius: 25,
-                                // ),
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: ShapeDecoration(
-                                    shape: CircleBorder(),
-                                    color: Colors.white,
-                                  ),
-                                  child: Icon(Icons.work, color: Colors.grey,),
-                                  alignment: Alignment.center,
-                                ),
+                        onTap: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(
+                                  builder: (context) =>CommandesEnCours())
+                          );
+                        },
 
-                                SizedBox(width: 30,),
 
-                                Text("Mes commandes",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20
-
-                                  ),)
-                              ],
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Container(
-                                height: 30 ,
-                                width: 30,
+                        child: Container(
+                          height: 70,
+                          width: double.infinity,
+                          child: Stack(
+                            children: [
+                              Container(
+                                height: double.infinity,
+                                width: double.infinity,
+                                margin: EdgeInsets.only(
+                                    right: 20),
+                                padding: EdgeInsets.symmetric(horizontal: 20),
                                 decoration: ShapeDecoration(
-                                  shape: CircleBorder(),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5)
+                                  ),
                                   color: Colors.grey[400],
                                 ),
-                                child: Icon(Icons.arrow_forward_ios_rounded,
-                                  color: Colors.white70,
-                                  size: 17,),
 
+                                child: Row(children: [
+                                  // CircleAvatar(
+                                  //   backgroundColor: Colors.grey,
+                                  //   backgroundImage: AssetImage(
+                                  //       "assets/images/menu.png"),
+                                  //   radius: 25,
+                                  // ),
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: ShapeDecoration(
+                                      shape: CircleBorder(),
+                                      color: Colors.white,
+                                    ),
+                                    child: Icon(Icons.work, color: Colors.grey,),
+                                    alignment: Alignment.center,
+                                  ),
+
+                                  SizedBox(width: 30,),
+
+                                  Text("Mes commandes",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20
+
+                                    ),)
+                                ],
+                                ),
                               ),
-                            )
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: Container(
+                                  height: 30 ,
+                                  width: 30,
+                                  decoration: ShapeDecoration(
+                                    shape: CircleBorder(),
+                                    color: Colors.grey[400],
+                                  ),
+                                  child: Icon(Icons.arrow_forward_ios_rounded,
+                                    color: Colors.white70,
+                                    size: 17,),
 
-                          ],
+                                ),
+                              )
+
+                            ],
+                          ),
                         ),
                       ),
 
                       //--------------------------------
                       SizedBox(height: 22,),
 
-                      Container(
-                        height: 70,
-                        width: double.infinity,
-                        child: Stack(
-                          children: [
-                            Container(
-                              height: double.infinity,
-                              width: double.infinity,
-                              margin: EdgeInsets.only(
-                                  right: 20),
-                              padding: EdgeInsets.symmetric(horizontal: 20),
-                              decoration: ShapeDecoration(
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5)
-                                ),
-                                color: Colors.deepOrange[200],
-                              ),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context,
+                              MaterialPageRoute(
+                                  builder: (context) =>Payement())
+                          );
+                        },
 
-                              child: Row(children: [
-                                // CircleAvatar(
-                                //   backgroundColor: Colors.grey,
-                                //   backgroundImage: AssetImage(
-                                //       "assets/images/menu.png"),
-                                //   radius: 25,
-                                // ),
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: ShapeDecoration(
-                                    shape: CircleBorder(),
-                                    color: Colors.white,
-                                  ),
-                                  child: Icon(Icons.work, color: Colors.deepOrange[200],),
-                                  alignment: Alignment.center,
-                                ),
-
-                                SizedBox(width: 30,),
-
-                                Text("Mes commandes",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20
-
-                                  ),)
-                              ],
-                              ),
-                            ),
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: Container(
-                                height: 30 ,
-                                width: 30,
+                        child: Container(
+                          height: 70,
+                          width: double.infinity,
+                          child: Stack(
+                            children: [
+                              Container(
+                                height: double.infinity,
+                                width: double.infinity,
+                                margin: EdgeInsets.only(
+                                    right: 20),
+                                padding: EdgeInsets.symmetric(horizontal: 20),
                                 decoration: ShapeDecoration(
-                                  shape: CircleBorder(),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(5)
+                                  ),
                                   color: Colors.deepOrange[200],
                                 ),
-                                child: Icon(Icons.arrow_forward_ios_rounded,
-                                  color: Colors.white70,
-                                  size: 17,),
 
+                                child: Row(children: [
+
+                                  // CircleAvatar(
+                                  //   backgroundColor: Colors.grey,
+                                  //   backgroundImage: AssetImage(
+                                  //       "assets/images/menu.png"),
+                                  //   radius: 25,
+                                  // ),
+
+
+                                  Container(
+                                    width: 50,
+                                    height: 50,
+                                    decoration: ShapeDecoration(
+                                      shape: CircleBorder(),
+                                      color: Colors.white,
+                                    ),
+
+
+                                    child: Icon(Icons.shopping_cart, color: Colors.deepOrange[200],),
+                                    alignment: Alignment.center,
+                                  ),
+
+                                  SizedBox(width: 30,),
+
+                                  Text("Offers",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20
+
+                                    ),)
+                                ],
+                                ),
                               ),
-                            )
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: Container(
+                                  height: 30 ,
+                                  width: 30,
+                                  decoration: ShapeDecoration(
+                                    shape: CircleBorder(),
+                                    color: Colors.deepOrange[200],
+                                  ),
+                                  child: Icon(Icons.arrow_forward_ios_rounded,
+                                    color: Colors.white70,
+                                    size: 17,),
 
-                          ],
+                                ),
+                              )
+
+                            ],
+                          ),
                         ),
                       ),
 

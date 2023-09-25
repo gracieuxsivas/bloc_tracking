@@ -267,8 +267,6 @@ class _CommandesEnCoursState extends State<CommandesEnCours> {
                               color: Colors.white
                           ),), ),
                       )
-
-
                     ],
                   ),
                 )
