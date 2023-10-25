@@ -40,9 +40,14 @@ class _LivreursState extends State<Livreurs> {
     return
       Scaffold(
         backgroundColor: Colors.grey[300],
-          floatingActionButton: FloatingActionButton(
-            onPressed: showLivreurDialog,
-            child: Icon(Icons.playlist_add),backgroundColor: Colors.blue[400],),
+          floatingActionButton: Align(
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: FloatingActionButton(
+                onPressed: showLivreurDialog,
+                child: Icon(Icons.playlist_add),backgroundColor: Colors.blue[400],),
+            ),
+          ),
 
           appBar: AppBar(
           elevation: 0,
@@ -76,6 +81,8 @@ class _LivreursState extends State<Livreurs> {
         ),
 
         body: Container(
+
+
           height: MediaQuery.of(context).size.height *0.75,
           child: ListView.builder(itemBuilder: (ctx, index){
             return Card(
@@ -109,7 +116,8 @@ class _LivreursState extends State<Livreurs> {
           },
            itemCount: livreursListe.length,
           ),
-        )
+        ),
+
 
         // Column(
         //   children: [

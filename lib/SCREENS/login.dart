@@ -86,7 +86,10 @@ class _loginState extends State<login> {
 
                             Navigator.push(context,
                                 MaterialPageRoute(
-                                    builder: (context)=> Navigateur()));
+                                    builder: (context)=>
+                                        Accueil()
+                                        //Navigateur()
+                                ));
                           },
                           child: isLoading?CircularProgressIndicator(): Text(
                             "Connecté",

@@ -37,7 +37,6 @@ class _TrackState extends State<Track> {
   void getCurrentLocation()async {
     Location location = Location();
 
-
     location.getLocation().then(
           (location){
             currentLocation=location;
@@ -51,6 +50,8 @@ class _TrackState extends State<Track> {
       currentLocation=newLoc;
 
       googleMapController.
+
+          //POSITION EN MOUVEMENT
       animateCamera(
         CameraUpdate.newCameraPosition(
           CameraPosition(
@@ -62,7 +63,6 @@ class _TrackState extends State<Track> {
           ),
       ),
       );
-
       setState(() {});
 
     },);
@@ -145,30 +145,31 @@ class _TrackState extends State<Track> {
       appBar: AppBar(
         title: (
 
-        Text("Track order",
+        Text("Map",
         style: TextStyle(fontWeight: FontWeight.bold),)
         ),
 
       ),
       body:
-      currentLocation==null
-          ? const Center(child:Text("loading..."))
-          :
+      //currentLocation==null
+      //     ? const Center(child:Text("loading..."))
+      //     :
       GoogleMap(
         initialCameraPosition: CameraPosition(
             target: LatLng(currentLocation!.latitude!, currentLocation!.longitude!),
-            zoom: 15
+            zoom: 15,
+
         ),
 
         //LIGNES POUR ITUNERAIRE
 
-        polylines: {
-          Polyline(polylineId: PolylineId("route"),
-          points: polylineCoordinates,
-            color: Colors.blueAccent,
-            width: 6,
-          ),
-        },
+        // polylines: {
+        //   Polyline(polylineId: PolylineId("route"),
+        //   points: polylineCoordinates,
+        //     color: Colors.blueAccent,
+        //     width: 6,
+        //   ),
+        // },
         markers: {
 
             Marker(
@@ -177,17 +178,19 @@ class _TrackState extends State<Track> {
             position: LatLng(
                 currentLocation!.latitude!, currentLocation!.longitude!),
           ),
-           Marker(
-            markerId: MarkerId("Source"),
-            icon: sourceIcon,
-            position: sourceLocation,
-          ),
 
-           Marker(
-            markerId: MarkerId("Destination"),
-             icon: destinationIcon,
-            position: destination,
-          ),
+          //UTINERAIRE
+          //  Marker(
+          //   markerId: MarkerId("Source"),
+          //   icon: sourceIcon,
+          //   position: sourceLocation,
+          // ),
+          //
+          //  Marker(
+          //   markerId: MarkerId("Destination"),
+          //    icon: destinationIcon,
+          //   position: destination,
+          // ),
         },
 
         onMapCreated:(mapController){

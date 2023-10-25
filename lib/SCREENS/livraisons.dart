@@ -5,18 +5,58 @@ class Livraisons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-      Column(
+    return Scaffold(
+      body: Stack(
         children: [
-          Text("Livreurs"),
-          SizedBox(height: 100),
+          SafeArea(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Row(children: [
+                    IconButton(
+                        onPressed: (){
+                          Navigator.of(context).pop();
+                        },
+                        icon: Icon(Icons.arrow_back_rounded
+                        )
+                    ),
+                    Expanded(child: Text("Livraisons",
+                      style:
+                      TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),))
+                  ],
+                  ),
+                ),
 
-          CircleAvatar(
-            radius: 70,
-            child: Icon(Icons.people),
-          )
+
+
+
+
+              ],
+            ),
+          ),
+          // Positioned(
+          //   bottom: 0,
+          //   left: 0,
+          //     child: Text("Commandes en cours",) )
         ],
-      );
+      ),
+
+    );
+      // Column(
+      //   children: [
+      //     Text("Livreurs"),
+      //     SizedBox(height: 100),
+      //
+      //     CircleAvatar(
+      //       radius: 70,
+      //       child: Icon(Icons.people),
+      //     )
+      //   ],
+      // );
   }
 }
 

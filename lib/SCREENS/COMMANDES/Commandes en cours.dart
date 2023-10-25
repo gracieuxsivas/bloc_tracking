@@ -247,6 +247,7 @@ class _CommandesEnCoursState extends State<CommandesEnCours> {
                           ),
                         ],
                       ),
+
                       SizedBox(height: 20,),
 
                       SizedBox(
