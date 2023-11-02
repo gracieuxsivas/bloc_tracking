@@ -480,7 +480,9 @@ class _AccueilState extends State<Accueil> {
           ),
 
           //NOTRE BARRE DE NAVIGATION
-          Positioned(bottom: 0, left:0,
+          Positioned(
+              bottom: 0,
+              left:0,
               child: navBar()),
 
 

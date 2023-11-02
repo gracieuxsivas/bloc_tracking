@@ -1,3 +1,4 @@
+import 'package:bloc_tracking/widget/navBar.dart';
 import 'package:flutter/material.dart';
 
 class Livraisons extends StatelessWidget {
@@ -32,16 +33,13 @@ class Livraisons extends StatelessWidget {
                 ),
 
 
-
-
-
               ],
             ),
           ),
-          // Positioned(
-          //   bottom: 0,
-          //   left: 0,
-          //     child: Text("Commandes en cours",) )
+          Positioned(
+              bottom: 0,
+              left:0,
+              child: navBar()),
         ],
       ),
 
